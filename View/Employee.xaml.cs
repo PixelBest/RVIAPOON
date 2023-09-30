@@ -1,9 +1,13 @@
-﻿using RVIAPOON.Models.Interfaces;
+﻿using Microsoft.Win32;
+using RVIAPOON.Models.Interfaces;
 using RVIAPOON.Models.UsingModels;
 using RVIAPOON.Presenters;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
+using System.Data.OleDb;
+using System.Data;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -80,6 +84,12 @@ namespace RVIAPOON.View
         {
             AddEmployee addEmployee = new AddEmployee(Emploуees, presenter);
             addEmployee.ShowDialog();
+        }
+
+        private void SQL_Click(object sender, RoutedEventArgs e)
+        {
+            SQL sql = new SQL(presenter);
+            sql.ShowDialog();
         }
     }
 }

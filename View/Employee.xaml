@@ -21,6 +21,7 @@
             <MenuItem Header="Действия" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="0 3 0 0">
                 <MenuItem Header="Искать по номеру" Click="TabNum_Click"/>
                 <MenuItem Header="Искать по фамилии" Click="Failia_Click"/>
+                <MenuItem Header="SQL" Click="SQL_Click"/>
                 <MenuItem Header="Добавить пользователя" Click="AddEmployee_Click"/>
             </MenuItem>
         </Menu>

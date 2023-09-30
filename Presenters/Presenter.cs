@@ -7,6 +7,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace RVIAPOON.Presenters
 {
@@ -38,5 +39,8 @@ namespace RVIAPOON.Presenters
 
         public ObservableCollection<Emploуees> FamiliaSearch(string name) =>
             model.FamiliaSearch(view.Emploуees, name);
+
+        public void SQLCommand(string command, DataGrid dtg) =>
+            model.SQLCommand(command, dtg);
     }
 }

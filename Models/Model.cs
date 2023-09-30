@@ -8,6 +8,7 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Controls;
 
 namespace RVIAPOON.Models
 {
@@ -71,6 +72,12 @@ namespace RVIAPOON.Models
                 if (item.FIO.Contains(name))
                     list.Add(item);
             return list;
+        }
+
+        public void SQLCommand(string command, DataGrid dtg)
+        {
+            Db db = new Db();
+            db.SQLCommand(command, dtg);
         }
     }
 }
