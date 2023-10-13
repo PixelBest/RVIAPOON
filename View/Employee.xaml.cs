@@ -25,17 +25,17 @@ namespace RVIAPOON.View
     /// <summary>
     /// Логика взаимодействия для Employee.xaml
     /// </summary>
-    public partial class Employee : Window, IView
+    public partial class Employee : Window
     {
-        public List<Login> Login { get; set; }
-        public ObservableCollection<Emploуees> Emploуees { get; set; }
 
         Presenter presenter;
-        public Employee()
+        MainWindow mainWindow;
+        public Employee(MainWindow mw, Presenter p)
         {
             InitializeComponent();
-            presenter = new Presenter(this);
-            dtg.ItemsSource = Emploуees;
+            presenter = p;
+            mainWindow = mw;
+            dtg.ItemsSource = mainWindow.Emploуees;
         }
 
         private void TabNum_Click(object sender, RoutedEventArgs e)
@@ -56,7 +56,7 @@ namespace RVIAPOON.View
 
         private void Refresh_Click(object sender, RoutedEventArgs e)
         {
-            dtg.ItemsSource = Emploуees;
+            dtg.ItemsSource = mainWindow.Emploуees;
             TabNum_txb.Text = "";
             Familia_txb.Text = "";
         }
@@ -82,7 +82,7 @@ namespace RVIAPOON.View
 
         private void AddEmployee_Click(object sender, RoutedEventArgs e)
         {
-            AddEmployee addEmployee = new AddEmployee(Emploуees, presenter);
+            AddEmployee addEmployee = new AddEmployee(mainWindow.Emploуees, presenter);
             addEmployee.ShowDialog();
         }
 

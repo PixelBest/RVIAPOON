@@ -26,6 +26,7 @@ namespace RVIAPOON.View
     {
         public List<Login> Login { get; set; }
         public ObservableCollection<Emploуees> Emploуees { get; set; }
+        public Login User { get; set; }
 
 
         Presenter presenter;
@@ -43,7 +44,8 @@ namespace RVIAPOON.View
                 {
                     if (login_txb.Text == item.UserName && password_txb.Password == item.Password)
                     {
-                        Employee employee = new Employee();
+                        User = item;
+                        Employee employee = new Employee(this, presenter);
                         this.Close();
                         employee.ShowDialog();
                         return;

@@ -11,6 +11,7 @@ namespace RVIAPOON.Models.Interfaces
     public interface IView
     {
         List<Login> Login { get; set; }
+        Login User { get; set; }
         ObservableCollection<Emploуees> Emploуees { get; set; }
     }
 }

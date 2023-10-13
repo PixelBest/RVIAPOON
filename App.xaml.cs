@@ -16,7 +16,7 @@ namespace RVIAPOON
     {
         protected override void OnStartup(StartupEventArgs e)
         {
-            MainWindow window = new MainWindow();
+            Start window = new Start();
             window.Show();
         }
     }
