@@ -1,10 +1,12 @@
-﻿using RVIAPOON.Models.UsingModels;
+﻿using RVIAPOON.Data;
+using RVIAPOON.Models.UsingModels;
 using RVIAPOON.Presenters;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
+using System.Text.RegularExpressions;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -24,6 +26,7 @@ namespace RVIAPOON.View
     {
         ObservableCollection<Emploуees> Emploуees;
         Presenter presenter;
+        Emploуees employee;
         public AddEmployee(ObservableCollection<Emploуees> e, Presenter p)
         {
             InitializeComponent();
@@ -31,6 +34,16 @@ namespace RVIAPOON.View
             presenter = p;
             Role_cmb.ItemsSource = presenter.GetRole();
         }
+        
+        /*public AddEmployee(ObservableCollection<Emploуees> e, Presenter p, Emploуees emp)
+        {
+            InitializeComponent();
+            Emploуees = e;
+            presenter = p;
+            employee = emp;
+            Role_cmb.ItemsSource = presenter.GetRole();
+
+        }*/
         private void AddEmployee_Click(object sender, RoutedEventArgs e)
         {
             if (FIO_txb.Text != "" && Departament_txb.Text != "" && Position_txb.Text != "" && Login_txb.Text != "" && Password_txb.Text != "" && Role_cmb.Text != "")
@@ -51,5 +64,11 @@ namespace RVIAPOON.View
 
         private void Back_Click(object sender, RoutedEventArgs e) =>
             this.Close();
+
+        private void TextBox_PreviewTextInput(object sender, TextCompositionEventArgs e)
+        {
+            if (!Regex.IsMatch(e.Text, @"[a-zA-Zа-яА-Я]"))
+                e.Handled = true;
+        }
     }
 }

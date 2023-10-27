@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:RVIAPOON.View"
         mc:Ignorable="d"
         Title="Employee" Height="500" Width="850">
-    <Grid Margin="0,0,0,2">
+    <Grid Margin="0,0,0,0">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="188"/>
             <ColumnDefinition/>
@@ -14,7 +14,7 @@
 
         <Grid.RowDefinitions >
             <RowDefinition Height="25"/>
-            <RowDefinition Height="25"/>
+            <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
 
         <Menu DockPanel.Dock="Top" Grid.ColumnSpan="2">
@@ -35,9 +35,9 @@
                 <Button Content="Выход" Margin="50,15,50,0" Click="Exit_Click"/>
             </StackPanel>
         </Grid>
-        <Grid Grid.Row="1" Grid.Column="1" Margin="0,0,0,-432">
-            <DataGrid x:Name="dtg" Margin="2,0,0,0"  ItemsSource = "{Binding Emploуees}" IsReadOnly="True"
-                  AutoGenerateColumns="False" AlternationCount="2" FontFamily="Roboto Condensed">
+        <Grid Grid.Row="1" Grid.Column="1">
+            <DataGrid x:Name="dtg" Margin="2,0,0,0"  ItemsSource = "{Binding Emploуees}" IsReadOnly="True" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"
+                  AutoGenerateColumns="False" AlternationCount="2" FontFamily="Roboto Condensed" MouseDoubleClick="Employees_DblClk">
 
                 <DataGrid.ColumnHeaderStyle>
                     <Style TargetType="{x:Type DataGridColumnHeader}">

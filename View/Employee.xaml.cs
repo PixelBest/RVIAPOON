@@ -91,5 +91,12 @@ namespace RVIAPOON.View
             SQL sql = new SQL(presenter);
             sql.ShowDialog();
         }
+
+        private void Employees_DblClk(object sender, MouseButtonEventArgs e)
+        {
+            /*Employee emp = (Employee)dtg.SelectedItem;
+            AddEmployee addEmployee = new AddEmployee(mainWindow.Emploуees, presenter, emp);
+            addEmployee.ShowDialog();*/
+        }
     }
 }

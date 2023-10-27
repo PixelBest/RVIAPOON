@@ -44,7 +44,7 @@ namespace RVIAPOON.View
         {
             SaveFileDialog FD = new SaveFileDialog();
             FD.FileName = "SQL-Запрос";
-            FD.Filter = "Текстовый документ (.txt)|.txt|Все файлы (.)| . ";
+            FD.Filter = "Текстовый документ (*.sql)| *.sql|Все файлы (.)| . ";
             bool? result = FD.ShowDialog();
             if (result == true)
             {
@@ -72,6 +72,7 @@ namespace RVIAPOON.View
                 OleDbDataAdapter adapter = new OleDbDataAdapter();
                 StreamReader sr = new StreamReader(openFileDialog.FileName);
                 string req = sr.ReadToEnd();
+                txb.Text = req;
                 sr.Close();
                 adapter.SelectCommand = new OleDbCommand(req, Connection1);
                 DataSet ds = new DataSet();

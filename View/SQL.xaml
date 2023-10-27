@@ -7,14 +7,16 @@
         mc:Ignorable="d"
         Title="SQL" Height="450" Width="800">
     <Grid>
-        <TextBox x:Name="txb" Margin="0,0,0,286"/>
-        <StackPanel Orientation="Horizontal" Margin="0,148,0,212">
-            <Button Content="Выполнить" Click="Button_Click" Width="107" Height="45" Margin="20,0,0,0"/>
-            <Button Content="Очистить" Click="Clean_Click" Width="107" Height="45" Margin="20,0,0,0"/>
-            <Button Content="Сохранить" Click="Save_Click" Width="107" Height="45" Margin="20,0,0,0"/>
-            <Button Content="Готовый запрос" Click="ReadeRequest_Click" Width="107" Height="45" Margin="20,0,0,0"/>
-            <Button Content="Назад" Click="Back_Click" Width="107" Height="45" Margin="150,0,0,0"/>
+        <StackPanel>
+            <TextBox x:Name="txb" Margin="0,0,0,20" Height="131"/>
+            <StackPanel Orientation="Horizontal" Margin="0,0,0,20">
+                <Button Content="Выполнить" Click="Button_Click" Width="107" Height="45" Margin="20,0,0,0"/>
+                <Button Content="Очистить" Click="Clean_Click" Width="107" Height="45" Margin="20,0,0,0"/>
+                <Button Content="Сохранить" Click="Save_Click" Width="107" Height="45" Margin="20,0,0,0"/>
+                <Button Content="Готовый запрос" Click="ReadeRequest_Click" Width="107" Height="45" Margin="20,0,0,0"/>
+                <Button Content="Назад" Click="Back_Click" Width="107" Height="45" Margin="150,0,0,0"/>
+            </StackPanel>
         </StackPanel>
-        <DataGrid x:Name="dtg" Margin="0,222,0,0"/>
+        <DataGrid x:Name="dtg" Margin="0,217,0,0"/>
     </Grid>
 </Window>

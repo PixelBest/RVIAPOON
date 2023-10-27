@@ -7,10 +7,11 @@
         mc:Ignorable="d"
         Title="Start" Height="350" Width="500">
     <Grid>
-        <InkCanvas>
-            <Image Source="2.jpg" Margin="0,0,0,0" Stretch="Fill" Height="352" Width="500" />
-        </InkCanvas>
-        <ProgressBar x:Name="progressBar" HorizontalAlignment="Center" VerticalAlignment="Top" Width="419" Height="20"
-                     Minimum="0" Maximum="100" Value="0" Margin="0,272,0,0"/>
+
+        <Grid HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
+            <Image Source="2.jpg" Margin="0,0,0,0" Stretch="Fill" />
+            <ProgressBar x:Name="progressBar" HorizontalAlignment="Center" VerticalAlignment="Top" Width="419" Height="20"
+                         Minimum="0" Maximum="100" Value="0" Margin="0,272,0,0"/>
+        </Grid>
     </Grid>
 </Window>
